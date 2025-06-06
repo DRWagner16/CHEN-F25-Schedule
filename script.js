@@ -189,4 +189,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         eventDiv.innerHTML = `
             <div class="event-title">${course.course_number}</div>
-            <div class="event-
+            <div class="event-tooltip">
+                <strong>Course:</strong> ${course.course_number}<br>
+                <strong>Instructor:</strong> ${course.instructors}<br>
+                <strong>Time:</strong> ${course.time_of_day}<br>
+                <strong>Location:</strong> ${course.location}<br>
+                <strong>Type:</strong> ${course.type}<br>
+                <strong>Duration:</strong> ${course.duration} min
+            </div>`;
+            
+        column.appendChild(eventDiv);
+    }
+});
