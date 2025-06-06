@@ -12,18 +12,24 @@
         
         <div class="filters">
             <div class="filter-group">
-                <label for="course-filter">Filter by Course:</label>
-                <select id="course-filter">
-                    <option value="all">All Courses</option>
-                    </select>
-            </div>
-            <div class="filter-group">
                 <label for="instructor-filter">Filter by Instructor:</label>
                 <select id="instructor-filter">
                     <option value="all">All Instructors</option>
-                    </select>
+                </select>
             </div>
-            <button id="reset-filters">Reset</button>
+            <div class="filter-group">
+                <label for="type-filter">Filter by Type:</label>
+                <select id="type-filter">
+                    <option value="all">All Types</option>
+                </select>
+            </div>
+            <button id="reset-filters">Reset All Filters</button>
+        </div>
+        
+        <div class="course-filter-container">
+            <h3>Filter by Course (select multiple)</h3>
+            <div id="course-checkboxes" class="checkbox-container">
+                </div>
         </div>
 
         <div class="calendar-container">
