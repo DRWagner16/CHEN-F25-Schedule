@@ -188,4 +188,9 @@ label.htmlFor = courseName;
                 <strong>Time:</strong> ${course.time_of_day}<br>
                 <strong>Location:</strong> ${course.location}<br>
                 <strong>Type:</strong> ${course.type}<br>
-                <strong>Duration:</strong> ${course.duration
+                <strong>Duration:</strong> ${course.duration} min
+            </div>`;
+            
+        column.appendChild(eventDiv);
+    }
+});
