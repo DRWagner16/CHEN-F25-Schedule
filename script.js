@@ -2,69 +2,49 @@ document.addEventListener('DOMContentLoaded', () => {
     const calendarGrid = document.querySelector('.calendar-grid');
     const timeColumn = document.querySelector('.time-column');
     
-    // --- Configuration ---
     const START_HOUR = 7; // Calendar starts at 7 AM
-    const END_HOUR = 20; // Calendar ends at 8 PM (20:00)
+    const END_HOUR = 20;  // Calendar ends at 8 PM (20:00)
 
-    // --- Generate Time Slots ---
+    // Generate Time Slots
     for (let hour = START_HOUR; hour <= END_HOUR; hour++) {
         const timeSlot = document.createElement('div');
         timeSlot.classList.add('time-slot');
         timeSlot.innerText = `${hour}:00`;
         timeColumn.appendChild(timeSlot);
     }
-
-    // --- Fetch and Display Schedule Data ---
-    console.log("[INFO] Starting to fetch schedule.json...");
     
-    fetch('schedule.json')
-        .then(response => {
-            console.log("[INFO] Received a response from fetch.");
-            // Check if the request was successful
-            if (!response.ok) {
-                // Throw an error if the server responded with a status like 404 or 500
-                throw new Error(`Network response was not ok. Status: ${response.status}`);
-            }
-            // Proceed to parse the response body as JSON
-            return response.json();
-        })
-        .then(data => {
-            console.log("[INFO] Successfully parsed JSON data.", data);
-            if (!data || data.length === 0) {
-                console.warn("[WARN] Data is empty or null after parsing.");
-                return;
-            }
+    // --- This object maps the single-letter days from your data to the two-letter codes in the HTML ---
+    const dayMap = { 'M': 'Mo', 'T': 'Tu', 'W': 'We', 'R': 'Th', 'F': 'Fr' };
 
+    fetch('schedule.json')
+        .then(response => response.json())
+        .then(data => {
             data.forEach(course => {
                 placeCourseOnCalendar(course);
             });
-            console.log("[INFO] Finished processing all courses.");
         })
         .catch(error => {
-            // --- THIS IS THE NEW, IMPORTANT PART ---
-            // If any part of the fetch/parse process fails, this will catch the error
-            // and print a detailed message to the browser's console.
             console.error('[FATAL] An error occurred while loading or processing schedule.json:', error);
-            alert("Could not load schedule data. Please check the Developer Console for more information.");
         });
 
     function placeCourseOnCalendar(course) {
-        // Basic check to ensure the course object and its 'days' property are valid
-        if (!course || !course.days) {
-            console.warn("[WARN] Skipping a course with missing 'days' data.", course);
-            return;
-        }
+        if (!course || !course.days || !course.time_of_day) return;
 
-        // Example days: "MoWeFr", "TuTh"
-        const days = course.days.match(/.{1,2}/g);
-        if (!days) return; // Skip if days are empty or in an unexpected format
+        // --- FIX #1: Correctly parse the single-letter days ---
+        const days = course.days.split('').map(dayChar => dayMap[dayChar]).filter(Boolean);
+        if (days.length === 0) return;
 
         days.forEach(day => {
             const column = calendarGrid.querySelector(`.day-column[data-day="${day}"]`);
             if (!column) return; 
 
-            const [startTimeStr] = course.time_of_day.split(' - ');
-            const [time, ampm] = startTimeStr.split(' ');
+            // --- FIX #2: Correctly parse time without a space (e.g., "10:45AM") ---
+            const timeString = course.time_of_day;
+            const timeParts = timeString.match(/(\d{1,2}:\d{2})(AM|PM)/);
+            if (!timeParts) return; // Skip if the time format is unexpected
+
+            const startTimeStr = timeParts[0];
+            const [time, ampm] = [timeParts[1], timeParts[2]];
             let [hour, minute] = time.split(':').map(Number);
 
             if (ampm === 'PM' && hour !== 12) {
@@ -77,6 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const startMinutes = (hour * 60) + minute;
             const topPosition = ((startMinutes / 60) - START_HOUR) * 60;
             const height = course.duration;
+            
+            // Do not render events that are outside the calendar's visible hours
+            if (!height || topPosition < 0 || startMinutes > END_HOUR * 60) {
+                return;
+            }
 
             const eventDiv = document.createElement('div');
             eventDiv.className = 'class-event';
