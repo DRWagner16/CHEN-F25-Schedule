@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('schedule.json')
             .then(response => response.json())
             .then(data => {
-                // Pre-calculate start and end times for each course
                 allCourses = data.map(course => {
                     const timeString = course.time_of_day;
                     const timeParts = timeString.match(/(\d{1,2}:\d{2})(AM|PM)/);
@@ -80,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function populateFilters(courses) {
-        // This function remains the same as before
         const uniqueCourses = [...new Set(courses.map(course => course.course_number))].sort();
         uniqueCourses.forEach(courseName => {
             courseColorMap.set(courseName, stringToHslColor(courseName));
@@ -134,38 +132,26 @@ document.addEventListener('DOMContentLoaded', () => {
             return instructorMatch && typeMatch && courseMatch;
         });
 
-        // --- NEW: Advanced layout algorithm ---
-        // Process each day independently
         Object.values(dayMap).forEach(dayCode => {
-            // 1. Get all events for the current day and sort by start time
             const dayEvents = filteredCourses
                 .filter(course => course.days.includes(Object.keys(dayMap).find(key => dayMap[key] === dayCode)))
                 .sort((a, b) => a.startMinutes - b.startMinutes);
-
             if (dayEvents.length === 0) return;
-
-            // 2. Place events into columns to manage overlaps
-            let columns = []; // This will be an array of columns, where each column is an array of events
-            
+            let columns = [];
             dayEvents.forEach(event => {
                 let placed = false;
-                // Try to place the event in an existing column
                 for (const column of columns) {
                     const lastEventInColumn = column[column.length - 1];
-                    // If the new event doesn't overlap with the last one in this column, place it here
                     if (event.startMinutes >= lastEventInColumn.endMinutes) {
                         column.push(event);
                         placed = true;
                         break;
                     }
                 }
-                // If it couldn't be placed in any existing column, create a new one
                 if (!placed) {
                     columns.push([event]);
                 }
             });
-
-            // 3. Render the events for this day now that we have the column layout
             const totalColumns = columns.length;
             columns.forEach((column, columnIndex) => {
                 column.forEach(event => {
@@ -181,7 +167,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const column = calendarGrid.querySelector(`.day-column[data-day="${day}"]`);
         if (!column) return;
         
-        const topPosition = ((course.startMinutes / 60) - START_HOUR) * 60;
+        // --- THIS IS THE CORRECTED CALCULATION ---
+        // We need to get the minutes from the start of the day (midnight)
+        // and subtract the offset of the calendar's start hour.
+        const minutesSinceCalendarStart = course.startMinutes - (START_HOUR * 60);
+        const topPosition = minutesSinceCalendarStart; // 1 minute = 1 pixel
+
         const height = course.duration;
         if (!height || topPosition < 0) return;
         
