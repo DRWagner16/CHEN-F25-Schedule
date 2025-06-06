@@ -1,0 +1,362 @@
+[
+    {
+        "course_number": "CH EN 1703 - 1.0",
+        "instructors": "Butterfield",
+        "days": "TR",
+        "time_of_day": "09:10AM-10:30AM",
+        "duration": 80,
+        "location": "ASB 210"
+    },
+    {
+        "course_number": "CH EN 1703 - 2.0",
+        "instructors": "Butterfield",
+        "days": "M",
+        "time_of_day": "11:50AM-12:40PM",
+        "duration": 50,
+        "location": "MEB 1292"
+    },
+    {
+        "course_number": "CH EN 1703 - 3.0",
+        "instructors": "Butterfield",
+        "days": "M",
+        "time_of_day": "02:00PM-02:50PM",
+        "duration": 50,
+        "location": "MEB 1292"
+    },
+    {
+        "course_number": "CH EN 1703 - 4.0",
+        "instructors": "Butterfield",
+        "days": "T",
+        "time_of_day": "12:25PM-01:15PM",
+        "duration": 50,
+        "location": "MEB 1292"
+    },
+    {
+        "course_number": "CH EN 1703 - 5.0",
+        "instructors": "Butterfield",
+        "days": "T",
+        "time_of_day": "02:00PM-02:50PM",
+        "duration": 50,
+        "location": "MEB 1292"
+    },
+    {
+        "course_number": "CH EN 1703 - 6.0",
+        "instructors": "Butterfield",
+        "days": "W",
+        "time_of_day": "05:10PM-06:00PM",
+        "duration": 50,
+        "location": "MEB 1292"
+    },
+    {
+        "course_number": "CH EN 2300 - nan",
+        "instructors": "Kelly",
+        "days": "MW",
+        "time_of_day": "09:40AM-10:30AM",
+        "duration": 50,
+        "location": "WEB 1230"
+    },
+    {
+        "course_number": "CH EN 2450 - nan",
+        "instructors": "Chen",
+        "days": "TR",
+        "time_of_day": "02:00PM-03:20PM",
+        "duration": 80,
+        "location": "WEB 2250"
+    },
+    {
+        "course_number": "CH EN 2800 - nan",
+        "instructors": "Chen",
+        "days": "TR",
+        "time_of_day": "12:25PM-01:45PM",
+        "duration": 80,
+        "location": "MEN 4550"
+    },
+    {
+        "course_number": "CH EN 2953 - nan",
+        "instructors": "Eddings",
+        "days": "T",
+        "time_of_day": "10:45AM-11:35AM",
+        "duration": 50,
+        "location": "WEB 1230"
+    },
+    {
+        "course_number": "CH EN 3253 - nan",
+        "instructors": "Deo; Wagner",
+        "days": "MWF",
+        "time_of_day": "08:35AM-09:25AM",
+        "duration": 50,
+        "location": "WEB 1250"
+    },
+    {
+        "course_number": "CH EN 3353 - nan",
+        "instructors": "Faroughi",
+        "days": "MWF",
+        "time_of_day": "09:40AM-10:30AM",
+        "duration": 50,
+        "location": "GC 2660"
+    },
+    {
+        "course_number": "CH EN 3453 - nan",
+        "instructors": "Pershing; Powell",
+        "days": "MW",
+        "time_of_day": "11:50AM-01:10PM",
+        "duration": 80,
+        "location": "WEB 1230"
+    },
+    {
+        "course_number": "CH EN 3700 - 1.0",
+        "instructors": "Staff",
+        "days": "MWF",
+        "time_of_day": "08:35AM-09:25AM",
+        "duration": 50,
+        "location": "M LI 1715"
+    },
+    {
+        "course_number": "CH EN 3700 - 2.0",
+        "instructors": "Staff",
+        "days": "MWF",
+        "time_of_day": "07:30AM-08:20AM",
+        "duration": 50,
+        "location": "WEB 2250"
+    },
+    {
+        "course_number": "CH EN 3701 - 1.0",
+        "instructors": "Porter; Pershing; McLennan",
+        "days": "M",
+        "time_of_day": "02:00PM-05:00PM",
+        "duration": 180,
+        "location": "MEB 2550"
+    },
+    {
+        "course_number": "CH EN 3701 - 2.0",
+        "instructors": "Porter; Pershing; McLennan",
+        "days": "T",
+        "time_of_day": "02:00PM-05:00PM",
+        "duration": 180,
+        "location": "MEB 2550"
+    },
+    {
+        "course_number": "CH EN 3853 - nan",
+        "instructors": "Wang",
+        "days": "MWF",
+        "time_of_day": "10:45AM-11:35AM",
+        "duration": 50,
+        "location": "WEB 1250"
+    },
+    {
+        "course_number": "CH EN 4203 - nan",
+        "instructors": "Firth",
+        "days": "MWF",
+        "time_of_day": "10:45AM-11:35AM",
+        "duration": 50,
+        "location": "WEB L102"
+    },
+    {
+        "course_number": "CH EN 4253 - nan",
+        "instructors": "Wagner",
+        "days": "MWF",
+        "time_of_day": "09:40AM-10:30AM",
+        "duration": 50,
+        "location": "FASB 295"
+    },
+    {
+        "course_number": "CH EN 4701 - 1.0",
+        "instructors": "Firth",
+        "days": "W",
+        "time_of_day": "02:00PM-05:00PM",
+        "duration": 180,
+        "location": "MEB 3520"
+    },
+    {
+        "course_number": "CH EN 4701 - 2.0",
+        "instructors": "Firth",
+        "days": "R",
+        "time_of_day": "02:00PM-05:00PM",
+        "duration": 180,
+        "location": "MEB 3520"
+    },
+    {
+        "course_number": "CH EN 4706 - 1.0",
+        "instructors": "Butterfield",
+        "days": "M",
+        "time_of_day": "12:55PM-01:45PM",
+        "duration": 50,
+        "location": "MEB 1292"
+    },
+    {
+        "course_number": "CH EN 4706 - 1.0",
+        "instructors": "Butterfield",
+        "days": "M",
+        "time_of_day": "02:00PM-05:00PM",
+        "duration": 180,
+        "location": "MEB 1292"
+    },
+    {
+        "course_number": "CH EN 4706 - 2.0",
+        "instructors": "Butterfield",
+        "days": "T",
+        "time_of_day": "12:55PM-01:45PM",
+        "duration": 50,
+        "location": "MEB 1292"
+    },
+    {
+        "course_number": "CH EN 4706 - 2.0",
+        "instructors": "Butterfield",
+        "days": "T",
+        "time_of_day": "02:00PM-05:00PM",
+        "duration": 180,
+        "location": "MEB 1292"
+    },
+    {
+        "course_number": "CH EN 4870 - nan",
+        "instructors": "Sieving",
+        "days": "W",
+        "time_of_day": "04:10PM-05:00PM",
+        "duration": 50,
+        "location": "WEB 1248"
+    },
+    {
+        "course_number": "CH EN 5163/6163 - nan",
+        "instructors": "Sorkhabi",
+        "days": "TR",
+        "time_of_day": "02:00PM-03:20PM",
+        "duration": 80,
+        "location": "WBB 820"
+    },
+    {
+        "course_number": "CH EN 5173 - nan",
+        "instructors": "Whitty",
+        "days": "TR",
+        "time_of_day": "10:45AM-12:05PM",
+        "duration": 80,
+        "location": "MEB 4550"
+    },
+    {
+        "course_number": "CH EN 5305/6305 - nan",
+        "instructors": "Holmes",
+        "days": "TR",
+        "time_of_day": "09:10AM-10:30AM",
+        "duration": 80,
+        "location": "MEB 2325"
+    },
+    {
+        "course_number": "CH EN 5308/6308 - nan",
+        "instructors": "Gao",
+        "days": "MW",
+        "time_of_day": "08:05AM-09:25AM",
+        "duration": 80,
+        "location": "WEB 1248"
+    },
+    {
+        "course_number": "CH EN 5555/6555 - nan",
+        "instructors": "Nigra",
+        "days": "MW",
+        "time_of_day": "11:50AM-01:10PM",
+        "duration": 80,
+        "location": "BU C 108"
+    },
+    {
+        "course_number": "CH EN 5960/6960 - nan",
+        "instructors": "Sant",
+        "days": "WF",
+        "time_of_day": "03:00PM-04:20PM",
+        "duration": 80,
+        "location": "WEB L126"
+    },
+    {
+        "course_number": "CH EN 5960-007 - 7.0",
+        "instructors": "Parvania",
+        "days": "TR",
+        "time_of_day": "12:25PM-01:45PM",
+        "duration": 80,
+        "location": "WEB 1460"
+    },
+    {
+        "course_number": "CH EN 6400 - nan",
+        "instructors": "Saad",
+        "days": "TR",
+        "time_of_day": "10:45AM-12:05PM",
+        "duration": 80,
+        "location": "WEB L122"
+    },
+    {
+        "course_number": "CH EN 6703 - nan",
+        "instructors": "Sutherland",
+        "days": "MW",
+        "time_of_day": "01:25PM-02:45PM",
+        "duration": 80,
+        "location": "WEB 1248"
+    },
+    {
+        "course_number": "CH EN 6853 - nan",
+        "instructors": "Hoepfner",
+        "days": "TR",
+        "time_of_day": "09:10AM-10:30AM",
+        "duration": 80,
+        "location": "WEB L122"
+    },
+    {
+        "course_number": "CH EN 6960 - 2.0",
+        "instructors": "Zangle",
+        "days": "MWF",
+        "time_of_day": "09:40AM-10:30AM",
+        "duration": 50,
+        "location": "WEB 1460"
+    },
+    {
+        "course_number": "CH EN 7753 - nan",
+        "instructors": "Skliar",
+        "days": "T",
+        "time_of_day": "12:25PM-01:15PM",
+        "duration": 50,
+        "location": "MEB 3291"
+    },
+    {
+        "course_number": "CH EN 7857 - nan",
+        "instructors": "McLennan",
+        "days": "F",
+        "time_of_day": "11:50AM-12:50PM",
+        "duration": 60,
+        "location": "WEB 1248"
+    },
+    {
+        "course_number": "ENGIN 1022 - 2.0",
+        "instructors": "Firth",
+        "days": "T",
+        "time_of_day": "03:40PM-05:00PM",
+        "duration": 80,
+        "location": "TBD"
+    },
+    {
+        "course_number": "ENGIN 1022 - 3.0",
+        "instructors": "Firth",
+        "days": "R",
+        "time_of_day": "12:25PM-01:45PM",
+        "duration": 80,
+        "location": "MEB 2550"
+    },
+    {
+        "course_number": "ENGIN 1022 - 4.0",
+        "instructors": "Firth",
+        "days": "F",
+        "time_of_day": "11:50AM-01:10PM",
+        "duration": 80,
+        "location": "MEB 2550"
+    },
+    {
+        "course_number": "ENGIN 1022 - 5.0",
+        "instructors": "Firth",
+        "days": "F",
+        "time_of_day": "01:25PM-02:45PM",
+        "duration": 80,
+        "location": "MEB 2550"
+    },
+    {
+        "course_number": "ENGIN 1022 - 6.0",
+        "instructors": "Firth",
+        "days": "F",
+        "time_of_day": "03:00PM-04:20PM",
+        "duration": 80,
+        "location": "MEB 2550"
+    }
+]
