@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resetBtn = document.getElementById('reset-filters');
 
     // --- Configuration ---
-    const START_HOUR = 7;
+    const START_HOUR = 6;
     const END_HOUR = 20;
     const dayMap = { 'M': 'Mo', 'T': 'Tu', 'W': 'We', 'R': 'Th', 'F': 'Fr' };
     let allCourses = [];
