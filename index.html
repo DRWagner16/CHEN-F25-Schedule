@@ -7,26 +7,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calendar-container">
+    <div class="page-container">
         <h1>Weekly Schedule</h1>
-        <div class="calendar-grid">
-            <div class="time-column">
-                <div class="time-slot header">Time</div>
+        
+        <div class="filters">
+            <div class="filter-group">
+                <label for="course-filter">Filter by Course:</label>
+                <select id="course-filter">
+                    <option value="all">All Courses</option>
+                    </select>
+            </div>
+            <div class="filter-group">
+                <label for="instructor-filter">Filter by Instructor:</label>
+                <select id="instructor-filter">
+                    <option value="all">All Instructors</option>
+                    </select>
+            </div>
+            <button id="reset-filters">Reset</button>
+        </div>
+
+        <div class="calendar-container">
+            <div class="calendar-grid">
+                <div class="time-column">
+                    <div class="time-slot header">Time</div>
                 </div>
-            <div class="day-column" data-day="Mo">
-                <div class="day-header">Monday</div>
-            </div>
-            <div class="day-column" data-day="Tu">
-                <div class="day-header">Tuesday</div>
-            </div>
-            <div class="day-column" data-day="We">
-                <div class="day-header">Wednesday</div>
-            </div>
-            <div class="day-column" data-day="Th">
-                <div class="day-header">Thursday</div>
-            </div>
-            <div class="day-column" data-day="Fr">
-                <div class="day-header">Friday</div>
+                <div class="day-column" data-day="Mo">
+                    <div class="day-header">Monday</div>
+                </div>
+                <div class="day-column" data-day="Tu">
+                    <div class="day-header">Tuesday</div>
+                </div>
+                <div class="day-column" data-day="We">
+                    <div class="day-header">Wednesday</div>
+                </div>
+                <div class="day-column" data-day="Th">
+                    <div class="day-header">Thursday</div>
+                </div>
+                <div class="day-column" data-day="Fr">
+                    <div class="day-header">Friday</div>
+                </div>
             </div>
         </div>
     </div>
