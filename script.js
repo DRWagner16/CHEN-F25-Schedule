@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const END_HOUR = 20;
     const dayMap = { 'M': 'Mo', 'T': 'Tu', 'W': 'We', 'R': 'Th', 'F': 'Fr' };
     let allCourses = [];
-    const courseColorMap = new Map(); // To store a unique color for each course
+    const courseColorMap = new Map();
 
     // --- Initial Setup ---
     generateTimeSlots();
@@ -33,10 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Functions ---
 
-    /**
-     * NEW: Generates a color based on a string.
-     * This ensures the same course always gets the same color.
-     */
     function stringToHslColor(str, s = 60, l = 75) {
         let hash = 0;
         for (let i = 0; i < str.length; i++) {
@@ -68,13 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function populateFilters(courses) {
         const uniqueCourses = [...new Set(courses.map(course => course.course_number))].sort();
-        
-        // NEW: Assign a color to each unique course
         uniqueCourses.forEach(courseName => {
             courseColorMap.set(courseName, stringToHslColor(courseName));
         });
-
-        // (The rest of this function is the same)
         const allInstructorNames = courses.flatMap(course => course.instructors.split(';').map(name => name.trim()));
         const uniqueInstructors = [...new Set(allInstructorNames)].sort();
         uniqueInstructors.forEach(name => {
@@ -123,10 +115,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const courseMatch = (selectedCourses.length === 0 || selectedCourses.includes(course.course_number));
             return instructorMatch && typeMatch && courseMatch;
         });
-
-        // --- NEW: Collision detection and positioning logic ---
-        const eventLayouts = {}; // Key: "day-start-end", Value: [course1, course2]
-
+        
+        // --- CHANGE #1: The main drawing loop is updated ---
+        // This logic now correctly calls the drawing function for EACH day of a multi-day course.
+        const eventLayouts = {}; 
         filteredCourses.forEach(course => {
             if (!course || !course.time_of_day) return;
             const timeString = course.time_of_day;
@@ -149,29 +141,26 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Now place events with calculated widths and offsets
-        Object.values(eventLayouts).forEach(collidingEvents => {
+        // The iteration logic is now slightly different to pass the correct day.
+        Object.entries(eventLayouts).forEach(([key, collidingEvents]) => {
+            const day = key.split('-')[0]; // Extract the day from the key
             const totalInSlot = collidingEvents.length;
             collidingEvents.forEach((course, indexInSlot) => {
                 const width = 100 / totalInSlot;
                 const left = indexInSlot * width;
-                placeCourseOnCalendar(course, width, left);
+                // Pass the specific day to the drawing function
+                placeCourseOnCalendar(course, day, width, left);
             });
         });
     }
     
-    // --- UPDATED: placeCourseOnCalendar now accepts width and left parameters ---
-    function placeCourseOnCalendar(course, width = 100, left = 0) {
-        if (!course || !course.days || !course.time_of_day) return;
-
-        const days = course.days.split('').map(dayChar => dayMap[dayChar]).filter(Boolean);
-        if (days.length === 0) return;
-
-        const dayToPlace = days.find(d => calendarGrid.querySelector(`.day-column[data-day="${d}"]`));
-        if (!dayToPlace) return;
-
-        const column = calendarGrid.querySelector(`.day-column[data-day="${dayToPlace}"]`);
+    // --- CHANGE #2: The drawing function now accepts the specific 'day' to draw on ---
+    function placeCourseOnCalendar(course, day, width = 100, left = 0) {
+        // The function no longer needs to figure out the days, it's told which one to draw.
+        const column = calendarGrid.querySelector(`.day-column[data-day="${day}"]`);
+        if (!column) return; // If the day isn't found, stop.
         
+        // The rest of the function is mostly the same, calculating position and creating the element.
         const timeString = course.time_of_day;
         const timeParts = timeString.match(/(\d{1,2}:\d{2})(AM|PM)/);
         if (!timeParts) return;
@@ -187,15 +176,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const eventDiv = document.createElement('div');
         eventDiv.className = 'class-event';
         
-        // --- Apply new styles ---
         eventDiv.style.top = `${topPosition}px`;
         eventDiv.style.height = `${height}px`;
-        eventDiv.style.width = `calc(${width}% - 4px)`; // Subtract a little for margins
+        eventDiv.style.width = `calc(${width}% - 4px)`;
         eventDiv.style.left = `${left}%`;
         
         const color = courseColorMap.get(course.course_number) || '#a3c4f3';
         eventDiv.style.backgroundColor = color;
-        // Make border slightly darker than the background
         eventDiv.style.borderColor = `hsl(${parseInt(color.substring(4))}, 50%, 60%)`;
 
         eventDiv.innerHTML = `
