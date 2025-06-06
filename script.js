@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('schedule.json')
             .then(response => response.json())
             .then(data => {
-                allCourses = data; // Store the original data
+                allCourses = data;
                 populateFilters(data);
                 filterAndRedrawCalendar();
             })
@@ -48,7 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function populateFilters(courses) {
         const uniqueCourses = [...new Set(courses.map(course => course.course_number))].sort();
-        const uniqueInstructors = [...new Set(courses.map(course => course.instructors))].sort();
+        
+        // --- CHANGE #1: Correctly parse multiple instructors for the dropdown ---
+        const allInstructorNames = courses.flatMap(course => course.instructors.split(';').map(name => name.trim()));
+        const uniqueInstructors = [...new Set(allInstructorNames)].sort();
+        // --- END CHANGE #1 ---
 
         uniqueCourses.forEach(courseName => {
             const option = document.createElement('option');
@@ -58,28 +62,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         uniqueInstructors.forEach(instructorName => {
-            const option = document.createElement('option');
-            option.value = instructorName;
-            option.textContent = instructorName;
-            instructorFilter.appendChild(option);
+            // Don't add blank or "nan" entries to the filter
+            if (instructorName && instructorName.toLowerCase() !== 'nan') {
+                const option = document.createElement('option');
+                option.value = instructorName;
+                option.textContent = instructorName;
+                instructorFilter.appendChild(option);
+            }
         });
     }
 
     function filterAndRedrawCalendar() {
-        // Clear all existing events from the calendar
         document.querySelectorAll('.class-event').forEach(event => event.remove());
 
         const selectedCourse = courseFilter.value;
         const selectedInstructor = instructorFilter.value;
 
-        // Filter the courses based on dropdown selections
         const filteredCourses = allCourses.filter(course => {
             const courseMatch = (selectedCourse === 'all' || course.course_number === selectedCourse);
-            const instructorMatch = (selectedInstructor === 'all' || course.instructors === selectedInstructor);
+
+            // --- CHANGE #2: Check if the instructor's name is INCLUDED in the string ---
+            const instructorMatch = (selectedInstructor === 'all' || course.instructors.includes(selectedInstructor));
+            // --- END CHANGE #2 ---
+
             return courseMatch && instructorMatch;
         });
 
-        // Draw the filtered courses
         filteredCourses.forEach(course => placeCourseOnCalendar(course));
     }
 
@@ -114,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
             eventDiv.style.top = `${topPosition}px`;
             eventDiv.style.height = `${height}px`;
 
-            // --- Tooltip and Event Content ---
             eventDiv.innerHTML = `
                 <div class="event-title">${course.course_number}</div>
                 <div class="event-tooltip">
