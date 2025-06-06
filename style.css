@@ -17,6 +17,11 @@ h1 {
     color: #003366;
     margin-bottom: 20px;
 }
+h2 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 14px;
+}
 .filters {
     display: flex;
     flex-wrap: wrap;
