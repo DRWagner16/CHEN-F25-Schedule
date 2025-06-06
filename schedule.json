@@ -1,6 +1,6 @@
 [
     {
-        "course_number": "CH EN 1703 - 1.0",
+        "course_number": "CH EN 1703-Lec",
         "instructors": "Butterfield",
         "days": "TR",
         "time_of_day": "09:10AM-10:30AM",
@@ -9,7 +9,7 @@
         "type": "Year 1"
     },
     {
-        "course_number": "CH EN 1703 - 2.0",
+        "course_number": "CH EN 1703-Lab",
         "instructors": "Butterfield",
         "days": "M",
         "time_of_day": "11:50AM-12:40PM",
@@ -18,7 +18,7 @@
         "type": "Year 1"
     },
     {
-        "course_number": "CH EN 1703 - 3.0",
+        "course_number": "CH EN 1703-Lab",
         "instructors": "Butterfield",
         "days": "M",
         "time_of_day": "02:00PM-02:50PM",
@@ -27,7 +27,7 @@
         "type": "Year 1"
     },
     {
-        "course_number": "CH EN 1703 - 4.0",
+        "course_number": "CH EN 1703-Lab",
         "instructors": "Butterfield",
         "days": "T",
         "time_of_day": "12:25PM-01:15PM",
@@ -36,7 +36,7 @@
         "type": "Year 1"
     },
     {
-        "course_number": "CH EN 1703 - 5.0",
+        "course_number": "CH EN 1703-Lab",
         "instructors": "Butterfield",
         "days": "T",
         "time_of_day": "02:00PM-02:50PM",
@@ -45,7 +45,7 @@
         "type": "Year 1"
     },
     {
-        "course_number": "CH EN 1703 - 6.0",
+        "course_number": "CH EN 1703-Lab",
         "instructors": "Butterfield",
         "days": "W",
         "time_of_day": "05:10PM-06:00PM",
@@ -54,7 +54,7 @@
         "type": "Year 1"
     },
     {
-        "course_number": "CH EN 2300 - nan",
+        "course_number": "CH EN 2300",
         "instructors": "Kelly",
         "days": "MW",
         "time_of_day": "09:40AM-10:30AM",
@@ -63,7 +63,7 @@
         "type": "Year 2"
     },
     {
-        "course_number": "CH EN 2450 - nan",
+        "course_number": "CH EN 2450",
         "instructors": "Chen",
         "days": "TR",
         "time_of_day": "02:00PM-03:20PM",
@@ -72,7 +72,7 @@
         "type": "Year 2"
     },
     {
-        "course_number": "CH EN 2800 - nan",
+        "course_number": "CH EN 2800",
         "instructors": "Chen",
         "days": "TR",
         "time_of_day": "12:25PM-01:45PM",
@@ -81,7 +81,7 @@
         "type": "Year 2"
     },
     {
-        "course_number": "CH EN 2953 - nan",
+        "course_number": "CH EN 2953",
         "instructors": "Eddings",
         "days": "T",
         "time_of_day": "10:45AM-11:35AM",
@@ -90,7 +90,7 @@
         "type": "Other"
     },
     {
-        "course_number": "CH EN 3253 - nan",
+        "course_number": "CH EN 3253",
         "instructors": "Deo; Wagner",
         "days": "MWF",
         "time_of_day": "08:35AM-09:25AM",
@@ -99,7 +99,7 @@
         "type": "Other"
     },
     {
-        "course_number": "CH EN 3353 - nan",
+        "course_number": "CH EN 3353",
         "instructors": "Faroughi",
         "days": "MWF",
         "time_of_day": "09:40AM-10:30AM",
@@ -108,7 +108,7 @@
         "type": "Year 3"
     },
     {
-        "course_number": "CH EN 3453 - nan",
+        "course_number": "CH EN 3453",
         "instructors": "Pershing; Powell",
         "days": "MW",
         "time_of_day": "11:50AM-01:10PM",
@@ -117,7 +117,7 @@
         "type": "Year 3"
     },
     {
-        "course_number": "CH EN 3700 - 1.0",
+        "course_number": "CH EN 3700-001",
         "instructors": "Staff",
         "days": "MWF",
         "time_of_day": "08:35AM-09:25AM",
@@ -126,7 +126,7 @@
         "type": "Year 3"
     },
     {
-        "course_number": "CH EN 3700 - 2.0",
+        "course_number": "CH EN 3700-002",
         "instructors": "Staff",
         "days": "MWF",
         "time_of_day": "07:30AM-08:20AM",
@@ -135,7 +135,7 @@
         "type": "Year 3"
     },
     {
-        "course_number": "CH EN 3701 - 1.0",
+        "course_number": "CH EN 3701-001",
         "instructors": "Porter; Pershing; McLennan",
         "days": "M",
         "time_of_day": "02:00PM-05:00PM",
@@ -144,7 +144,7 @@
         "type": "Year 3"
     },
     {
-        "course_number": "CH EN 3701 - 2.0",
+        "course_number": "CH EN 3701-002",
         "instructors": "Porter; Pershing; McLennan",
         "days": "T",
         "time_of_day": "02:00PM-05:00PM",
@@ -153,7 +153,7 @@
         "type": "Year 3"
     },
     {
-        "course_number": "CH EN 3853 - nan",
+        "course_number": "CH EN 3853",
         "instructors": "Wang",
         "days": "MWF",
         "time_of_day": "10:45AM-11:35AM",
@@ -162,7 +162,7 @@
         "type": "Year 3"
     },
     {
-        "course_number": "CH EN 4203 - nan",
+        "course_number": "CH EN 4203",
         "instructors": "Firth",
         "days": "MWF",
         "time_of_day": "10:45AM-11:35AM",
@@ -171,7 +171,7 @@
         "type": "Year 4"
     },
     {
-        "course_number": "CH EN 4253 - nan",
+        "course_number": "CH EN 4253",
         "instructors": "Wagner",
         "days": "MWF",
         "time_of_day": "09:40AM-10:30AM",
@@ -180,7 +180,7 @@
         "type": "Year 4"
     },
     {
-        "course_number": "CH EN 4701 - 1.0",
+        "course_number": "CH EN 4701-001",
         "instructors": "Firth",
         "days": "W",
         "time_of_day": "02:00PM-05:00PM",
@@ -189,7 +189,7 @@
         "type": "Year 4"
     },
     {
-        "course_number": "CH EN 4701 - 2.0",
+        "course_number": "CH EN 4701-002",
         "instructors": "Firth",
         "days": "R",
         "time_of_day": "02:00PM-05:00PM",
@@ -198,7 +198,7 @@
         "type": "Year 4"
     },
     {
-        "course_number": "CH EN 4706 - 1.0",
+        "course_number": "CH EN 4706-001",
         "instructors": "Butterfield",
         "days": "M",
         "time_of_day": "12:55PM-01:45PM",
@@ -207,7 +207,7 @@
         "type": "Year 4"
     },
     {
-        "course_number": "CH EN 4706 - 1.0",
+        "course_number": "CH EN 4706-001",
         "instructors": "Butterfield",
         "days": "M",
         "time_of_day": "02:00PM-05:00PM",
@@ -216,7 +216,7 @@
         "type": "Year 4"
     },
     {
-        "course_number": "CH EN 4706 - 2.0",
+        "course_number": "CH EN 4706-002",
         "instructors": "Butterfield",
         "days": "T",
         "time_of_day": "12:55PM-01:45PM",
@@ -225,7 +225,7 @@
         "type": "Year 4"
     },
     {
-        "course_number": "CH EN 4706 - 2.0",
+        "course_number": "CH EN 4706-002",
         "instructors": "Butterfield",
         "days": "T",
         "time_of_day": "02:00PM-05:00PM",
@@ -234,7 +234,7 @@
         "type": "Year 4"
     },
     {
-        "course_number": "CH EN 4870 - nan",
+        "course_number": "CH EN 4870",
         "instructors": "Sieving",
         "days": "W",
         "time_of_day": "04:10PM-05:00PM",
@@ -243,7 +243,7 @@
         "type": "Elective"
     },
     {
-        "course_number": "CH EN 5163/6163 - nan",
+        "course_number": "CH EN 5163/6163",
         "instructors": "Sorkhabi",
         "days": "TR",
         "time_of_day": "02:00PM-03:20PM",
@@ -252,7 +252,7 @@
         "type": "Elective"
     },
     {
-        "course_number": "CH EN 5173 - nan",
+        "course_number": "CH EN 5173",
         "instructors": "Whitty",
         "days": "TR",
         "time_of_day": "10:45AM-12:05PM",
@@ -261,7 +261,7 @@
         "type": "Elective"
     },
     {
-        "course_number": "CH EN 5305/6305 - nan",
+        "course_number": "CH EN 5305/6305",
         "instructors": "Holmes",
         "days": "TR",
         "time_of_day": "09:10AM-10:30AM",
@@ -270,7 +270,7 @@
         "type": "Elective"
     },
     {
-        "course_number": "CH EN 5308/6308 - nan",
+        "course_number": "CH EN 5308/6308",
         "instructors": "Gao",
         "days": "MW",
         "time_of_day": "08:05AM-09:25AM",
@@ -279,7 +279,7 @@
         "type": "Elective"
     },
     {
-        "course_number": "CH EN 5555/6555 - nan",
+        "course_number": "CH EN 5555/6555",
         "instructors": "Nigra",
         "days": "MW",
         "time_of_day": "11:50AM-01:10PM",
@@ -288,7 +288,7 @@
         "type": "Elective"
     },
     {
-        "course_number": "CH EN 5960/6960 - nan",
+        "course_number": "CH EN 5960/6960",
         "instructors": "Sant",
         "days": "WF",
         "time_of_day": "03:00PM-04:20PM",
@@ -297,7 +297,7 @@
         "type": "Elective"
     },
     {
-        "course_number": "CH EN 5960-007 - 7.0",
+        "course_number": "CH EN 5960-007",
         "instructors": "Parvania",
         "days": "TR",
         "time_of_day": "12:25PM-01:45PM",
@@ -306,7 +306,7 @@
         "type": "Elective"
     },
     {
-        "course_number": "CH EN 6400 - nan",
+        "course_number": "CH EN 6400",
         "instructors": "Saad",
         "days": "TR",
         "time_of_day": "10:45AM-12:05PM",
@@ -315,7 +315,7 @@
         "type": "Graduate"
     },
     {
-        "course_number": "CH EN 6703 - nan",
+        "course_number": "CH EN 6703",
         "instructors": "Sutherland",
         "days": "MW",
         "time_of_day": "01:25PM-02:45PM",
@@ -324,7 +324,7 @@
         "type": "Elective"
     },
     {
-        "course_number": "CH EN 6853 - nan",
+        "course_number": "CH EN 6853",
         "instructors": "Hoepfner",
         "days": "TR",
         "time_of_day": "09:10AM-10:30AM",
@@ -333,7 +333,7 @@
         "type": "Graduate"
     },
     {
-        "course_number": "CH EN 6960 - 2.0",
+        "course_number": "CH EN 6960-002",
         "instructors": "Zangle",
         "days": "MWF",
         "time_of_day": "09:40AM-10:30AM",
@@ -342,7 +342,7 @@
         "type": "Elective"
     },
     {
-        "course_number": "CH EN 7753 - nan",
+        "course_number": "CH EN 7753",
         "instructors": "Skliar",
         "days": "T",
         "time_of_day": "12:25PM-01:15PM",
@@ -351,7 +351,7 @@
         "type": "Graduate"
     },
     {
-        "course_number": "CH EN 7857 - nan",
+        "course_number": "CH EN 7857",
         "instructors": "McLennan",
         "days": "F",
         "time_of_day": "11:50AM-12:50PM",
@@ -360,16 +360,16 @@
         "type": "Graduate"
     },
     {
-        "course_number": "ENGIN 1022 - 2.0",
+        "course_number": "ENGIN 1022-Lec",
         "instructors": "Firth",
         "days": "T",
         "time_of_day": "03:40PM-05:00PM",
         "duration": 80,
-        "location": "TBD",
+        "location": "WEB 1230",
         "type": "Other"
     },
     {
-        "course_number": "ENGIN 1022 - 3.0",
+        "course_number": "ENGIN 1022-Lab",
         "instructors": "Firth",
         "days": "R",
         "time_of_day": "12:25PM-01:45PM",
@@ -378,7 +378,7 @@
         "type": "Other"
     },
     {
-        "course_number": "ENGIN 1022 - 4.0",
+        "course_number": "ENGIN 1022-Lab",
         "instructors": "Firth",
         "days": "F",
         "time_of_day": "11:50AM-01:10PM",
@@ -387,7 +387,7 @@
         "type": "Other"
     },
     {
-        "course_number": "ENGIN 1022 - 5.0",
+        "course_number": "ENGIN 1022-Lab",
         "instructors": "Firth",
         "days": "F",
         "time_of_day": "01:25PM-02:45PM",
@@ -396,7 +396,7 @@
         "type": "Other"
     },
     {
-        "course_number": "ENGIN 1022 - 6.0",
+        "course_number": "ENGIN 1022-Lab",
         "instructors": "Firth",
         "days": "F",
         "time_of_day": "03:00PM-04:20PM",
