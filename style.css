@@ -94,23 +94,25 @@ h1 {
     border-left: 1px solid #ddd;
 }
 .time-column {
-    border-left: none; /* Remove double border on first column */
+    border-left: none;
 }
-
-/* --- New Style for the content area --- */
 .day-content {
-    position: relative; /* This is now the positioning parent for events */
-    flex-grow: 1; /* Make it fill the remaining space */
+    position: relative;
+    flex-grow: 1;
 }
 
+/* --- THIS IS THE CORRECTED BLOCK --- */
 .day-header, .time-slot.header { 
     background-color: #e9ecef; 
     font-weight: bold; 
-    padding: 10px; 
     text-align: center; 
     border-bottom: 1px solid #ddd;
-    flex-shrink: 0; /* Prevent header from shrinking */
+    flex-shrink: 0;
+    /* Replaced padding with fixed height and line-height for perfect alignment */
+    height: 40px;
+    line-height: 40px; 
 }
+
 .time-slot { 
     height: 60px; 
     border-bottom: 1px dotted #eee; 
