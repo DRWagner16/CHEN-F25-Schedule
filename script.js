@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeColumn = document.querySelector('.time-column');
     
     // --- Configuration ---
-    const START_HOUR = 8; // Calendar starts at 8 AM
-    const END_HOUR = 18; // Calendar ends at 6 PM (18:00)
+    const START_HOUR = 7; // Calendar starts at 7 AM
+    const END_HOUR = 20; // Calendar ends at 8 PM (20:00)
 
     // --- Generate Time Slots ---
     for (let hour = START_HOUR; hour <= END_HOUR; hour++) {
