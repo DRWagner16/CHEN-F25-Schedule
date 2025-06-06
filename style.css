@@ -138,3 +138,14 @@ h1 {
 .event-tooltip { display: none; position: absolute; top: 100%; left: 0; width: 250px; background-color: #333; color: #fff; padding: 10px; border-radius: 6px; z-index: 100; font-size: 13px; line-height: 1.4; pointer-events: none; }
 .class-event:hover .event-tooltip { display: block; }
 .event-tooltip strong { color: #a3c4f3; }
+
+/* Add this to the end of style.css */
+
+.debug-ruler {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: red;
+    z-index: 999;
+}
