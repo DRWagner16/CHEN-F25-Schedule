@@ -22,7 +22,7 @@ h1 {
 
 .filters {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -76,7 +76,6 @@ h1 {
     font-weight: 500;
 }
 
-/* --- CHANGE: Removed height and scrollbar styles --- */
 .checkbox-container {
     border: 1px solid #ddd;
     padding: 10px;
@@ -101,23 +100,23 @@ h1 {
 .calendar-grid {
     display: grid;
     grid-template-columns: 80px repeat(5, 1fr);
-    min-width: 1200px; /* Wider grid for better side-by-side view */
+    min-width: 1200px; 
 }
 .time-column, .day-column { display: flex; flex-direction: column; }
 .day-column { position: relative; border-left: 1px solid #ddd; }
 .day-header, .time-slot.header { background-color: #e9ecef; font-weight: bold; padding: 10px; text-align: center; border-bottom: 1px solid #ddd; }
 .time-slot { height: 60px; border-bottom: 1px dotted #eee; padding-left: 5px; box-sizing: border-box; font-size: 12px; color: #777; }
 
-/* --- CHANGE: Event styles updated for side-by-side rendering --- */
+/* --- THE FIX IS IN THIS BLOCK --- */
 .class-event {
     position: absolute;
-    background-color: #a3c4f3; /* This will be overridden by JS */
-    border: 1px solid #5a9bd5;  /* This will be overridden by JS */
+    background-color: #a3c4f3;
+    border: 1px solid #5a9bd5; 
     border-radius: 4px;
     padding: 4px;
     box-sizing: border-box;
-    overflow: hidden;
-    font-size: 11px; /* Smaller font for potentially narrow boxes */
+    /* overflow: hidden; */ /* THIS LINE IS REMOVED */
+    font-size: 11px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     z-index: 10;
     cursor: pointer;
@@ -125,7 +124,7 @@ h1 {
 }
 
 .class-event:hover {
-    z-index: 20; /* Bring hovered event to the front */
+    z-index: 20;
     transform: scale(1.02);
 }
 
@@ -133,7 +132,7 @@ h1 {
     font-weight: bold;
     margin-bottom: 2px;
     white-space: nowrap;
-    overflow: hidden;
+    overflow: hidden; /* This property is still here, so titles will truncate correctly */
     text-overflow: ellipsis;
 }
 .event-tooltip { display: none; position: absolute; top: 100%; left: 0; width: 250px; background-color: #333; color: #fff; padding: 10px; border-radius: 6px; z-index: 100; font-size: 13px; line-height: 1.4; pointer-events: none; }
