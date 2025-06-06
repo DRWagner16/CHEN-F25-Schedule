@@ -6,7 +6,7 @@
         "time_of_day": "09:10AM-10:30AM",
         "duration": 80,
         "location": "ASB 210",
-        "type": "1st-Year"
+        "type": "Year 1"
     },
     {
         "course_number": "CH EN 1703 - 2.0",
@@ -15,7 +15,7 @@
         "time_of_day": "11:50AM-12:40PM",
         "duration": 50,
         "location": "MEB 1292",
-        "type": "1st-Year"
+        "type": "Year 1"
     },
     {
         "course_number": "CH EN 1703 - 3.0",
@@ -24,7 +24,7 @@
         "time_of_day": "02:00PM-02:50PM",
         "duration": 50,
         "location": "MEB 1292",
-        "type": "1st-Year"
+        "type": "Year 1"
     },
     {
         "course_number": "CH EN 1703 - 4.0",
@@ -33,7 +33,7 @@
         "time_of_day": "12:25PM-01:15PM",
         "duration": 50,
         "location": "MEB 1292",
-        "type": "1st-Year"
+        "type": "Year 1"
     },
     {
         "course_number": "CH EN 1703 - 5.0",
@@ -42,7 +42,7 @@
         "time_of_day": "02:00PM-02:50PM",
         "duration": 50,
         "location": "MEB 1292",
-        "type": "1st-Year"
+        "type": "Year 1"
     },
     {
         "course_number": "CH EN 1703 - 6.0",
@@ -51,7 +51,7 @@
         "time_of_day": "05:10PM-06:00PM",
         "duration": 50,
         "location": "MEB 1292",
-        "type": "1st-Year"
+        "type": "Year 1"
     },
     {
         "course_number": "CH EN 2300 - nan",
@@ -60,7 +60,7 @@
         "time_of_day": "09:40AM-10:30AM",
         "duration": 50,
         "location": "WEB 1230",
-        "type": "Sophomore"
+        "type": "Year 2"
     },
     {
         "course_number": "CH EN 2450 - nan",
@@ -69,7 +69,7 @@
         "time_of_day": "02:00PM-03:20PM",
         "duration": 80,
         "location": "WEB 2250",
-        "type": "Sophomore"
+        "type": "Year 2"
     },
     {
         "course_number": "CH EN 2800 - nan",
@@ -78,7 +78,7 @@
         "time_of_day": "12:25PM-01:45PM",
         "duration": 80,
         "location": "MEN 4550",
-        "type": "Sophomore"
+        "type": "Year 2"
     },
     {
         "course_number": "CH EN 2953 - nan",
@@ -105,7 +105,7 @@
         "time_of_day": "09:40AM-10:30AM",
         "duration": 50,
         "location": "GC 2660",
-        "type": "Junior"
+        "type": "Year 3"
     },
     {
         "course_number": "CH EN 3453 - nan",
@@ -114,7 +114,7 @@
         "time_of_day": "11:50AM-01:10PM",
         "duration": 80,
         "location": "WEB 1230",
-        "type": "Junior"
+        "type": "Year 3"
     },
     {
         "course_number": "CH EN 3700 - 1.0",
@@ -123,7 +123,7 @@
         "time_of_day": "08:35AM-09:25AM",
         "duration": 50,
         "location": "M LI 1715",
-        "type": "Junior"
+        "type": "Year 3"
     },
     {
         "course_number": "CH EN 3700 - 2.0",
@@ -132,7 +132,7 @@
         "time_of_day": "07:30AM-08:20AM",
         "duration": 50,
         "location": "WEB 2250",
-        "type": "Junior"
+        "type": "Year 3"
     },
     {
         "course_number": "CH EN 3701 - 1.0",
@@ -141,7 +141,7 @@
         "time_of_day": "02:00PM-05:00PM",
         "duration": 180,
         "location": "MEB 2550",
-        "type": "Junior"
+        "type": "Year 3"
     },
     {
         "course_number": "CH EN 3701 - 2.0",
@@ -150,7 +150,7 @@
         "time_of_day": "02:00PM-05:00PM",
         "duration": 180,
         "location": "MEB 2550",
-        "type": "Junior"
+        "type": "Year 3"
     },
     {
         "course_number": "CH EN 3853 - nan",
@@ -159,7 +159,7 @@
         "time_of_day": "10:45AM-11:35AM",
         "duration": 50,
         "location": "WEB 1250",
-        "type": "Junior"
+        "type": "Year 3"
     },
     {
         "course_number": "CH EN 4203 - nan",
@@ -168,7 +168,7 @@
         "time_of_day": "10:45AM-11:35AM",
         "duration": 50,
         "location": "WEB L102",
-        "type": "Senior"
+        "type": "Year 4"
     },
     {
         "course_number": "CH EN 4253 - nan",
@@ -177,7 +177,7 @@
         "time_of_day": "09:40AM-10:30AM",
         "duration": 50,
         "location": "FASB 295",
-        "type": "Senior"
+        "type": "Year 4"
     },
     {
         "course_number": "CH EN 4701 - 1.0",
@@ -186,7 +186,7 @@
         "time_of_day": "02:00PM-05:00PM",
         "duration": 180,
         "location": "MEB 3520",
-        "type": "Senior"
+        "type": "Year 4"
     },
     {
         "course_number": "CH EN 4701 - 2.0",
@@ -195,7 +195,7 @@
         "time_of_day": "02:00PM-05:00PM",
         "duration": 180,
         "location": "MEB 3520",
-        "type": "Senior"
+        "type": "Year 4"
     },
     {
         "course_number": "CH EN 4706 - 1.0",
@@ -204,7 +204,7 @@
         "time_of_day": "12:55PM-01:45PM",
         "duration": 50,
         "location": "MEB 1292",
-        "type": "Senior"
+        "type": "Year 4"
     },
     {
         "course_number": "CH EN 4706 - 1.0",
@@ -213,7 +213,7 @@
         "time_of_day": "02:00PM-05:00PM",
         "duration": 180,
         "location": "MEB 1292",
-        "type": "Senior"
+        "type": "Year 4"
     },
     {
         "course_number": "CH EN 4706 - 2.0",
@@ -222,7 +222,7 @@
         "time_of_day": "12:55PM-01:45PM",
         "duration": 50,
         "location": "MEB 1292",
-        "type": "Senior"
+        "type": "Year 4"
     },
     {
         "course_number": "CH EN 4706 - 2.0",
@@ -231,7 +231,7 @@
         "time_of_day": "02:00PM-05:00PM",
         "duration": 180,
         "location": "MEB 1292",
-        "type": "Senior"
+        "type": "Year 4"
     },
     {
         "course_number": "CH EN 4870 - nan",
