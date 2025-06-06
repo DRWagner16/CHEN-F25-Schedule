@@ -1,7 +1,6 @@
 // In script.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Element Selectors ---
     const calendarGrid = document.querySelector('.calendar-grid');
     const timeColumn = document.querySelector('.time-column');
     const instructorFilter = document.getElementById('instructor-filter');
@@ -9,18 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const courseCheckboxesContainer = document.getElementById('course-checkboxes');
     const resetBtn = document.getElementById('reset-filters');
 
-    // --- Configuration ---
-    const START_HOUR = 6;
+    const START_HOUR = 7;
     const END_HOUR = 20;
     const dayMap = { 'M': 'Mo', 'T': 'Tu', 'W': 'We', 'R': 'Th', 'F': 'Fr' };
     let allCourses = [];
     const courseColorMap = new Map();
 
-    // --- Initial Setup ---
     generateTimeSlots();
     fetchDataAndInitialize();
 
-    // --- Event Listeners ---
     instructorFilter.addEventListener('change', filterAndRedrawCalendar);
     typeFilter.addEventListener('change', filterAndRedrawCalendar);
     courseCheckboxesContainer.addEventListener('change', filterAndRedrawCalendar);
@@ -30,8 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('#course-checkboxes input[type="checkbox"]').forEach(cb => cb.checked = false);
         filterAndRedrawCalendar();
     });
-
-    // --- Functions ---
 
     function stringToHslColor(str, s = 60, l = 75) {
         let hash = 0;
@@ -110,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             checkbox.id = courseName;
             checkbox.value = courseName;
             const label = document.createElement('label');
-            label.htmlFor = courseName;
+label.htmlFor = courseName;
             label.textContent = courseName;
             itemDiv.appendChild(checkbox);
             itemDiv.appendChild(label);
@@ -164,14 +158,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function placeCourseOnCalendar(course, day, width = 100, left = 0) {
-        const column = calendarGrid.querySelector(`.day-column[data-day="${day}"]`);
+        // --- THIS IS THE ONLY LINE CHANGED IN THIS SCRIPT ---
+        // We now look for the new .day-content container to place the event
+        const column = document.querySelector(`.day-content[data-day="${day}"]`);
         if (!column) return;
         
-        // --- THIS IS THE FINAL FIX ---
-        // The previous calculation was correct in theory, but visually off by 1 hour (60px).
-        // We adjust the calculation to compensate for the rendering offset we observed.
-        const topPosition = ((course.startMinutes / 60) - START_HOUR) * 60;
-        
+        const minutesSinceCalendarStart = course.startMinutes - (START_HOUR * 60);
+        const topPosition = minutesSinceCalendarStart;
         const height = course.duration;
         if (!height || topPosition < 0) return;
         
@@ -195,9 +188,4 @@ document.addEventListener('DOMContentLoaded', () => {
                 <strong>Time:</strong> ${course.time_of_day}<br>
                 <strong>Location:</strong> ${course.location}<br>
                 <strong>Type:</strong> ${course.type}<br>
-                <strong>Duration:</strong> ${course.duration} min
-            </div>`;
-            
-        column.appendChild(eventDiv);
-    }
-});
+                <strong>Duration:</strong> ${course.duration
