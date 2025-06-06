@@ -1,7 +1,6 @@
 // In script.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Element Selectors ---
     const calendarGrid = document.querySelector('.calendar-grid');
     const timeColumn = document.querySelector('.time-column');
     const instructorFilter = document.getElementById('instructor-filter');
@@ -9,18 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const courseCheckboxesContainer = document.getElementById('course-checkboxes');
     const resetBtn = document.getElementById('reset-filters');
 
-    // --- Configuration ---
     const START_HOUR = 7;
     const END_HOUR = 20;
     const dayMap = { 'M': 'Mo', 'T': 'Tu', 'W': 'We', 'R': 'Th', 'F': 'Fr' };
     let allCourses = [];
     const courseColorMap = new Map();
 
-    // --- Initial Setup ---
     generateTimeSlots();
     fetchDataAndInitialize();
 
-    // --- Event Listeners ---
     instructorFilter.addEventListener('change', filterAndRedrawCalendar);
     typeFilter.addEventListener('change', filterAndRedrawCalendar);
     courseCheckboxesContainer.addEventListener('change', filterAndRedrawCalendar);
@@ -30,8 +26,16 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('#course-checkboxes input[type="checkbox"]').forEach(cb => cb.checked = false);
         filterAndRedrawCalendar();
     });
-
-    // --- Functions ---
+    
+    // --- NEW: A function to draw a red line for debugging ---
+    function addDebugRuler(day, topPosition) {
+        const column = document.querySelector(`.day-column[data-day="${day}"]`);
+        if (!column) return;
+        const ruler = document.createElement('div');
+        ruler.className = 'debug-ruler';
+        ruler.style.top = `${topPosition}px`;
+        column.appendChild(ruler);
+    }
 
     function stringToHslColor(str, s = 60, l = 75) {
         let hash = 0;
@@ -79,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function populateFilters(courses) {
+        // This function remains the same
         const uniqueCourses = [...new Set(courses.map(course => course.course_number))].sort();
         uniqueCourses.forEach(courseName => {
             courseColorMap.set(courseName, stringToHslColor(courseName));
@@ -120,18 +125,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function filterAndRedrawCalendar() {
         document.querySelectorAll('.class-event').forEach(event => event.remove());
+        document.querySelectorAll('.debug-ruler').forEach(ruler => ruler.remove()); // Clear old rulers
 
+        // The filtering and layout logic remains the same
         const selectedInstructor = instructorFilter.value;
         const selectedType = typeFilter.value;
         const selectedCourses = Array.from(document.querySelectorAll('#course-checkboxes input:checked')).map(cb => cb.value);
-
         const filteredCourses = allCourses.filter(course => {
             const instructorMatch = (selectedInstructor === 'all' || course.instructors.includes(selectedInstructor));
             const typeMatch = (selectedType === 'all' || course.type === selectedType);
             const courseMatch = (selectedCourses.length === 0 || selectedCourses.includes(course.course_number));
             return instructorMatch && typeMatch && courseMatch;
         });
-
         Object.values(dayMap).forEach(dayCode => {
             const dayEvents = filteredCourses
                 .filter(course => course.days.includes(Object.keys(dayMap).find(key => dayMap[key] === dayCode)))
@@ -167,38 +172,24 @@ document.addEventListener('DOMContentLoaded', () => {
         const column = calendarGrid.querySelector(`.day-column[data-day="${day}"]`);
         if (!column) return;
         
-        // --- THIS IS THE CORRECTED CALCULATION ---
-        // We need to get the minutes from the start of the day (midnight)
-        // and subtract the offset of the calendar's start hour.
         const minutesSinceCalendarStart = course.startMinutes - (START_HOUR * 60);
-        const topPosition = minutesSinceCalendarStart; // 1 minute = 1 pixel
-
+        const topPosition = minutesSinceCalendarStart;
         const height = course.duration;
         if (!height || topPosition < 0) return;
         
+        // --- Call the new debug function ---
+        addDebugRuler(day, topPosition);
+
         const eventDiv = document.createElement('div');
         eventDiv.className = 'class-event';
-        
         eventDiv.style.top = `${topPosition}px`;
         eventDiv.style.height = `${height}px`;
         eventDiv.style.width = `calc(${width}% - 4px)`;
         eventDiv.style.left = `${left}%`;
-        
         const color = courseColorMap.get(course.course_number) || '#a3c4f3';
         eventDiv.style.backgroundColor = color;
         eventDiv.style.borderColor = `hsl(${parseInt(color.substring(4))}, 50%, 60%)`;
-
-        eventDiv.innerHTML = `
-            <div class="event-title">${course.course_number}</div>
-            <div class="event-tooltip">
-                <strong>Course:</strong> ${course.course_number}<br>
-                <strong>Instructor:</strong> ${course.instructors}<br>
-                <strong>Time:</strong> ${course.time_of_day}<br>
-                <strong>Location:</strong> ${course.location}<br>
-                <strong>Type:</strong> ${course.type}<br>
-                <strong>Duration:</strong> ${course.duration} min
-            </div>`;
-            
+        eventDiv.innerHTML = `<div class="event-title">${course.course_number}</div><div class="event-tooltip"><strong>Course:</strong> ${course.course_number}<br><strong>Instructor:</strong> ${course.instructors}<br><strong>Time:</strong> ${course.time_of_day}<br><strong>Location:</strong> ${course.location}<br><strong>Type:</strong> ${course.type}<br><strong>Duration:</strong> ${course.duration} min</div>`;
         column.appendChild(eventDiv);
     }
 });
