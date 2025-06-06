@@ -166,3 +166,21 @@ h1 {
 .event-tooltip strong { 
     color: #a3c4f3; 
 }
+
+/* Add this to the end of style.css */
+
+.link-button {
+    padding: 8px 12px;
+    border: 1px solid #6c757d;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.link-button:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
